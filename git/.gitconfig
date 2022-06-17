@@ -1,0 +1,34 @@
+[core]
+    pager = delta
+
+[alias]
+    c = "!f() { git add -A && git commit -m \"$1\"; }; f"
+    i = "!f() { git init && git C \"initial commit\"; }; f"
+    d = diff
+    s = status
+    co = checkout
+    pop = stash pop
+    rh = reset --hard HEAD
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[init]
+	defaultBranch = main
+
+[user]
+	email = quadr988@gmail.com
+	name = Andrii Maliuta
+
+[pull]
+	rebase = false
