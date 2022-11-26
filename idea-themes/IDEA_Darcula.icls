@@ -1,0 +1,79 @@
+<scheme name="Darcula" version="142" parent_scheme="Darcula">
+  <metaInfo>
+    <property name="created">2022-11-26T13:48:26</property>
+    <property name="ide">idea</property>
+    <property name="ideVersion">2022.2.4.0.0</property>
+    <property name="modified">2022-11-26T13:48:34</property>
+    <property name="originalScheme">_@user_Darcula</property>
+  </metaInfo>
+  <attributes>
+    <option name="HS_FUNCTION_NAME">
+      <value>
+        <option name="FOREGROUND" value="139dbb" />
+      </value>
+    </option>
+    <option name="HS_KEYWORD">
+      <value>
+        <option name="FOREGROUND" value="c57bd3" />
+      </value>
+    </option>
+    <option name="INTERFACE_NAME_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="66b63d" />
+      </value>
+    </option>
+    <option name="JAVA_KEYWORD">
+      <value>
+        <option name="FOREGROUND" value="c57bd3" />
+      </value>
+    </option>
+    <option name="KOTLIN_ANNOTATION">
+      <value>
+        <option name="FOREGROUND" value="bbb529" />
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="KOTLIN_DYNAMIC_FUNCTION_CALL">
+      <value>
+        <option name="FOREGROUND" value="4d4dc4" />
+        <option name="FONT_TYPE" value="3" />
+      </value>
+    </option>
+    <option name="KOTLIN_FUNCTION_CALL">
+      <value>
+        <option name="FOREGROUND" value="5b70b9" />
+      </value>
+    </option>
+    <option name="KOTLIN_PARAMETER">
+      <value>
+        <option name="FOREGROUND" value="856458" />
+      </value>
+    </option>
+    <option name="KOTLIN_TRAIT">
+      <value>
+        <option name="FOREGROUND" value="66b63d" />
+      </value>
+    </option>
+    <option name="METHOD_CALL_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="4460d3" />
+      </value>
+    </option>
+    <option name="METHOD_DECLARATION_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="139dbb" />
+      </value>
+    </option>
+    <option name="PARAMETER_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="856458" />
+      </value>
+    </option>
+    <option name="STATIC_METHOD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="677bd7" />
+        <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+  </attributes>
+</scheme>
