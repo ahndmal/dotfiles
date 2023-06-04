@@ -22,8 +22,8 @@ vim.keymap.set("n", "<leader>lg", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>")    
 
 -- navigation
-vim.keymap.set("L", "<cmd>bnext<cr>")
-vim.keymap.set("H", "<cmd>bprevious<cr>")
-vim.keymap.set("F", "<cmd>HopPattern<cr>")
+vim.keymap.set("n", "L", "<cmd>bnext<cr>")
+vim.keymap.set("n", "H", "<cmd>bprevious<cr>")
+vim.keymap.set("n", "F", "<cmd>HopPattern<cr>")
 
 
