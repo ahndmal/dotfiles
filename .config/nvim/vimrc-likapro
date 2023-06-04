@@ -1,7 +1,3 @@
-" https://github.com/junegunn/vim-plug
-" https://github.com/selikapro/vimrc-likapro/blob/main/.vimrc
-
-
 " Map escape to jj
 imap jj <Esc>
 

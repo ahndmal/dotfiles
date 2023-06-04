@@ -19,4 +19,5 @@ mappings.curr_buf = function()
   local opt = require('telescope.themes').get_dropdown({height=10, previewer=false})
   require('telescope.builtin').current_buffer_fuzzy_find(opt)
 end
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
 return mappings
