@@ -1,0 +1,13 @@
+# in <config_dir>/helix/languages.toml
+
+[[language]]
+name = "rust"
+auto-format = false
+
+[[language]]
+name = "java"
+auto-format = false
+file-types = ["java", "class"]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+
