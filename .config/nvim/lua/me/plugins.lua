@@ -24,8 +24,6 @@ return require('packer').startup(function(use)
 
     use 'neoclide/coc.nvim'
 
-    use 'itchyny/lightline.vim'
-
     use 'sheerun/vim-polyglot'
 
     -- 'morhetz/gruvbox'
