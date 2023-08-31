@@ -1,5 +1,4 @@
 
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -20,14 +19,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ########################### PLUGINS ########################
 
-plugins=(git)
+plugins=(git aws gcloud npm sdk)
 
 source $ZSH/oh-my-zsh.sh
-
-########################### ALIAS  ########################################
-
-
-alias work="echo 'we are working 🎅' | lolcat && timer 45m"
 
 #####################################################
 
@@ -61,8 +55,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/prog/go
 export CARGO=$HOME/.cargo/bin
 
-export EDITOR='nvim'
-
+export EDITOR='hx'
 
 
 
