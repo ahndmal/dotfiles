@@ -19,7 +19,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ########################### PLUGINS ########################
 
-plugins=(git aws gcloud npm sdk)
+plugins=( git zsh-syntax-highlighting zsh-autosuggestions aws gcloud npm sdk )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,8 +34,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-ATLAS_HOME="/home/andrii/atlas/atlassian-plugin-sdk-8.2.7"
 
 export GRAALVM_HOME=/home/andrii/.sdkman/candidates/java/22.3.r19-grl
 
