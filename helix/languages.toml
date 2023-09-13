@@ -1,13 +1,18 @@
 # in <config_dir>/helix/languages.toml
+# https://github.com/helix-editor/helix/blob/master/languages.toml
+
 
 [[language]]
 name = "rust"
 auto-format = false
 
+
 [[language]]
 name = "java"
-auto-format = false
-file-types = ["java", "class"]
-comment-token = "#"
+scope = "source.java"
+injection-regex = "java"
+file-types = ["java", "jav"]
+roots = ["pom.xml", "build.gradle", "build.gradle.kts"]
+language-servers = [ "jdtls" ]
 indent = { tab-width = 2, unit = "  " }
 
