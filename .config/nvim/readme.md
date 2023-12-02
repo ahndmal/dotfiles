@@ -1,5 +1,12 @@
 
-## Packer config
+## Vanilla
+Vanilla config in ```~/.config/nvim/init.vim``` with VimPlug.
+
+Vim-Plug (https://github.com/junegunn/vim-plug)
+
+## Lua config
+
+### Packer config
 
 docs - https://github.com/wbthomason/packer.nvim
 ```
