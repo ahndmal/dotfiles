@@ -10,8 +10,12 @@ Misc config of my environment
 ## Neovim
 
 Two ways to configure:
-1. Using vimrs/init.vim
-2. Using Lua
+1. Using vimrs/init.vim (+ plugin manager https://github.com/junegunn/vim-plug)
+    ```bash
+        sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    ```
+3. Using Lua
 
 ### Using Lua
 Create structure for lua files:
@@ -22,7 +26,6 @@ Create structure for lua files:
 -- remap.lua
 -- set.lua
 -- telescope.lua
-
 
 
 ## Helix
