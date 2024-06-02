@@ -1,5 +1,6 @@
+# My configuration for Linux env
 
-# Table of Contents
+## Table of Contents
 1. [Neovim](##Neovim)
 2. [Using Lua](###Using Lua)
 3. [Helix](##Helix)
@@ -13,6 +14,15 @@ Two ways to configure:
 2. Using Lua
 
 ### Using Lua
+Create structure for lua files:
+- init.lua
+- lua/me
+-- lsp.lua
+-- plugins.lua
+-- remap.lua
+-- set.lua
+-- telescope.lua
+
 
 
 ## Helix
