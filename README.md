@@ -21,15 +21,13 @@ Two ways to configure:
 Create structure for lua files:
 - init.lua
 - lua/me
--- lsp.lua
--- plugins.lua
--- remap.lua
--- set.lua
--- telescope.lua
-
+  - lsp.lua
+  - plugins.lua
+  - remap.lua
+  - set.lua
+  - telescope.lua
 
 ## Helix
-
 Config in ~/.config/helix:
 - config.toml (general configuration)
-- languages.toml (configuration for language servers for misc langiages)
+- languages.toml (configuration for language servers for misc langiages - https://github.com/ahndmal/.dotfiles/blob/main/helix/languages.toml)
