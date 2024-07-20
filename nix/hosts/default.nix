@@ -14,8 +14,6 @@
 
   networking.hostName = "andriiNix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Enable networking
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -29,6 +27,7 @@
     allowUnfree = true;
   };
 
+  ##############
   # environment.systemPackages = (import ./packages.nix) pkgs;
   
   i18n.extraLocaleSettings = {
@@ -43,6 +42,7 @@
     LC_TIME = "uk_UA.UTF-8";
   };
 
+  ############## X11
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -78,7 +78,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  ############### USER account. Don't forget to set a password with ‘passwd’.
   users.users.andrii = {
     isNormalUser = true;
     description = "andrii";
@@ -88,11 +88,10 @@
     ];
   };
 
-  # Install firefox.
+  ############## PROGRAMS
   programs.firefox.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  ############## PACKAGES
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -117,10 +116,9 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
+  ############## SERVICES
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -136,8 +134,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
-  services.openssh.enable = true;
-
+############## GC
   nix.gc = {
       automatic = true;
       dates = "weekly";
