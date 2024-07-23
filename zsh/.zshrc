@@ -3,19 +3,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH_THEME="af-magic"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME=robbyrussell
 
-#POWERLEVEL9K_MODE="nerdfont-complete"
-
+# POWERLEVEL9K_MODE="nerdfont-complete"
 
 ########################### PLUGINS ########################
 
