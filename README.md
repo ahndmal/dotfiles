@@ -31,3 +31,9 @@ Create structure for lua files:
 Config in ~/.config/helix:
 - config.toml (general configuration)
 - languages.toml (configuration for language servers for misc langiages - https://github.com/ahndmal/.dotfiles/blob/main/helix/languages.toml)
+
+## Fonts
+
+- Fira code (https://github.com/tonsky/FiraCode)
+- Powerline https://github.com/powerline/fonts
+- Nerd fonts (https://www.nerdfonts.com/)
