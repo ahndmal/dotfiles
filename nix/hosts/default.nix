@@ -1,4 +1,6 @@
-# https://github.com/matklad/config/blob/master/hosts/default.nix
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
 
@@ -12,9 +14,43 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "andriiNix"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Enable networking
   networking.networkmanager.enable = true;
+
+
+  ########################################### DOCKER
+  virtualisation.docker.enable = true;
+
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
+
+  ################################## Bluetooth
+  hardware.bluetooth.enable = true;
+
+
+  #################### FONTS
+  fonts.packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Terminus"]; })
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      liberation_ttf
+      fira-code
+      fira-code-symbols
+      mplus-outline-fonts.githubRelease
+      dina-font
+      proggyfonts
+  ];
 
   # Set your time zone.
   time.timeZone = "Europe/Kyiv";
@@ -27,28 +63,25 @@
     allowUnfree = true;
   };
 
-  ##############
-  # environment.systemPackages = (import ./packages.nix) pkgs;
-  
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "uk_UA.UTF-8";
-    LC_IDENTIFICATION = "uk_UA.UTF-8";
-    LC_MEASUREMENT = "uk_UA.UTF-8";
-    LC_MONETARY = "uk_UA.UTF-8";
-    LC_NAME = "uk_UA.UTF-8";
-    LC_NUMERIC = "uk_UA.UTF-8";
-    LC_PAPER = "uk_UA.UTF-8";
-    LC_TELEPHONE = "uk_UA.UTF-8";
-    LC_TIME = "uk_UA.UTF-8";
+    LC_ADDRESS = "tr_TR.UTF-8";
+    LC_IDENTIFICATION = "tr_TR.UTF-8";
+    LC_MEASUREMENT = "tr_TR.UTF-8";
+    LC_MONETARY = "tr_TR.UTF-8";
+    LC_NAME = "tr_TR.UTF-8";
+    LC_NUMERIC = "tr_TR.UTF-8";
+    LC_PAPER = "tr_TR.UTF-8";
+    LC_TELEPHONE = "tr_TR.UTF-8";
+    LC_TIME = "tr_TR.UTF-8";
   };
 
-  ############## X11
   # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -78,25 +111,30 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  ############### USER account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.andrii = {
     isNormalUser = true;
     description = "andrii";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
+      kdePackages.kate
     #  thunderbird
     ];
   };
 
-  ############## PROGRAMS
+  users.extraGroups.docker.members = [ "andrii" ];
+
+
+  # Install firefox.
   programs.firefox.enable = true;
 
-  ############## PACKAGES
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    neovim
     pkgs.git
-    pkgs.neovim
     pkgs.helix
     pkgs.zip
     pkgs.unzip
@@ -106,6 +144,13 @@
     pkgs.zulu8
     pkgs.jetbrains-toolbox
     pkgs.eza
+    brave
+    pyenv
+    fnm
+    awscli2
+    azure-cli
+    google-cloud-sdk
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -116,8 +161,9 @@
   #   enableSSHSupport = true;
   # };
 
-  ############## SERVICES
+  # List services that you want to enable:
 
+  # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
   # Open ports in the firewall.
@@ -134,7 +180,8 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
-############## GC
+
+  ############## GC
   nix.gc = {
       automatic = true;
       dates = "weekly";
