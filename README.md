@@ -7,6 +7,24 @@
 
 Misc config of my environment
 
+## Prerequisites
+1. ZSH
+2. OhMZsh
+3. powerlevel10k
+4. vim-plug
+5. tmux
+
+## ZSH
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### Plugins
+
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
 ## Neovim
 
 Two ways to configure:
