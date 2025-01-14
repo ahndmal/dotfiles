@@ -1,3 +1,4 @@
+
 #theme = "onedark"
 theme = "catppuccin_frappe"
 
@@ -13,3 +14,24 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
+###################################
+### KEYS MAPPING
+[keys.normal]
+C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+#"Jlw" = ["insert_mode", "System.out.println();"]
+
+[keys.insert]
+"G" = { p = [":insert-output echo -n 'println(\"\")'"] }
+  
+[keys.insert.J]
+"l" = { w = [":insert-output echo -n 'LOG.warn();'"] }
+"p" = ":insert-output echo -n 'System.out.println(\"\");'"
+
+[keys.insert.T]
+"p" = ":insert-output echo -n 'console.log(\"\");'"
+
+##################################
+
+[keys.normal.J]
+#"p" = ["insert_mode", "TEST!"]
+"`" = { p = ["normal_mode", ":pipe echo '```python'", "collapse_selection", "insert_mode"] }
