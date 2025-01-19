@@ -65,17 +65,19 @@ Plug('morhetz/gruvbox')
 -- Haskell ('https://github.com/neovimhaskell/haskell-vim')
 Plug('neovimhaskell/haskell-vim')
 
-Plug('catppuccin/nvim')
-
 -- ========== LSP
 Plug('neovim/nvim-lspconfig')
 
 -- On-demand loading: loaded when a file with a specific file type is opened
 Plug('tpope/vim-fireplace', { ['for'] = 'clojure' })
 
+-- transparent terminal
+Plug('xiyaowong/transparent.nvim')
+
+-- THEMES
+
 Plug('rose-pine/neovim')
-
-
+Plug('catppuccin/nvim')
 
 -- ========================================
 vim.call('plug#end')
