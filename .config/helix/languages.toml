@@ -1,12 +1,14 @@
 # in <config_dir>/helix/languages.toml
 # https://github.com/helix-editor/helix/blob/master/languages.toml
 
-[language-server.mylang-lsp]
-command = "mylang-lsp"
-args = ["--stdio"]
-config = { provideFormatter = true }
-environment = { "ENV1" = "value1", "ENV2" = "value2" }
+#[language-server.mylang-lsp]
+#command = "mylang-lsp"
+#args = ["--stdio"]
+#config = { provideFormatter = true }
+#environment = { "ENV1" = "value1", "ENV2" = "value2" }
 
+[language-server]
+groovy-lsp = { command = "java -jar xxx/groovy-language-server-all.jar" }
 
 ##################################
 
@@ -69,6 +71,7 @@ file-types = ["gradle", "groovy", "jenkinsfile", { glob = "Jenkinsfile" },  { gl
 shebangs = ["groovy"]
 comment-token = "//"
 indent = { tab-width = 2, unit = "  " }
+language-servers = [ "groovy-lsp" ]
 
 [[grammar]]
 name = "groovy"
