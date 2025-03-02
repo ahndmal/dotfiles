@@ -5,14 +5,14 @@
 2. [Using Lua](###Using Lua)
 3. [Helix](##Helix)
 
-Misc config of my environment
+Misc config of my environment.
 
 ## Prerequisites
-1. ZSH
-2. OhMZsh
-3. powerlevel10k
-4. vim-plug
-5. tmux
+1. OhMZsh
+2. powerlevel10k
+3. vim-plug
+4. tmux
+5. Zellij
 
 ## ZSH
 
