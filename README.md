@@ -12,7 +12,11 @@ Config of my environment.
 2. powerlevel10k
 3. vim-plug / Packer
 4. tmux / zellij
-5. 
+5. Language servers (https://github.com/helix-editor/helix/wiki/Language-Server-Configurations)
+
+## LS
+- https://github.com/helix-editor/helix/wiki/Language-Server-Configurations
+- https://langserver.org/
 
 ## ZSH
 
