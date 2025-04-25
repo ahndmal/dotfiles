@@ -5,14 +5,14 @@
 2. [Using Lua](###Using Lua)
 3. [Helix](##Helix)
 
-Misc config of my environment.
+Config of my environment.
 
 ## Prerequisites
 1. OhMZsh
 2. powerlevel10k
-3. vim-plug
-4. tmux
-5. Zellij
+3. vim-plug / Packer
+4. tmux / zellij
+5. 
 
 ## ZSH
 
@@ -25,7 +25,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
-## Neovim
+### Neovim
 
 Two ways to configure:
 1. Using vimrs/init.vim (+ plugin manager https://github.com/junegunn/vim-plug)
@@ -33,9 +33,9 @@ Two ways to configure:
         sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     ```
-3. Using Lua
+2. Using Lua
 
-### Using Lua
+#### Using Lua
 Create structure for lua files:
 - init.lua
 - lua/me
@@ -45,10 +45,27 @@ Create structure for lua files:
   - set.lua
   - telescope.lua
 
-## Helix
+### Helix
 Config in ~/.config/helix:
 - config.toml (general configuration)
-- languages.toml (configuration for language servers for misc langiages - https://github.com/ahndmal/.dotfiles/blob/main/helix/languages.toml)
+- languages.toml (configuration for language servers for languages: https://github.com/ahndmal/.dotfiles/blob/main/helix/languages.toml)
+
+## Emacs
+https://github.com/ahndmal/dotfiles/blob/main/.config/.emacs.d/.emacs
+- lsp-mode
+- lsp-ui
+- company
+- company-jedi
+- yasnippet
+- flycheck
+- dap-mode
+- toml-mode
+- which-key
+- quickrun
+- window-numbering
+- autopair
+- auto-complete
+- 
 
 ## Fonts
 
