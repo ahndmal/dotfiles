@@ -8,6 +8,8 @@
 #environment = { "ENV1" = "value1", "ENV2" = "value2" }
 
 [language-server]
+xml-server = { "command" = "java -jar /home/andrii/tools/lemminx/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar" }
+clojure-lsp = { command = "clojure-lsp" }
 groovy-lsp = { command = "java -jar xxx/groovy-language-server-all.jar" }
 
 ##################################
@@ -30,7 +32,7 @@ language-servers = [ "rust-analyzer" ]
 indent = { tab-width = 4, unit = "    " }
 persistent-diagnostic-sources = ["rustc", "clippy"]
 
-
+### JAVA
 [[language]]
 name = "java"
 scope = "source.java"
@@ -40,6 +42,7 @@ roots = ["pom.xml", "build.gradle", "build.gradle.kts"]
 language-servers = [ "jdtls" ]
 indent = { tab-width = 2, unit = "  " }
 
+### KOTLIN
 [[language]]
 name = "kotlin"
 scope = "source.kotlin"
@@ -49,6 +52,17 @@ comment-token = "//"
 block-comment-tokens = { start = "/*", end = "*/" }
 indent = { tab-width = 4, unit = "    " }
 language-servers = [ "kotlin-language-server" ]
+
+### CPP
+[[language]]
+name = "cpp"
+scope = "source.cpp"
+injection-regex = "cpp"
+file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh", "cppm", "h++", "ii", "inl", { glob = ".hpp.in" }, { glob = ".h.in" }]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+#language-servers = [ "clangd" ]
+indent = { tab-width = 2, unit = "  " }
 
 [[language]]
 name = "python"
@@ -68,11 +82,92 @@ name = "groovy"
 language-id = "groovy"
 scope = "source.groovy"
 file-types = ["gradle", "groovy", "jenkinsfile", { glob = "Jenkinsfile" },  { glob = "Jenkinsfile.*" }]
+roots = ["pom.xml", "build.gradle", "build.gradle.kts"]
 shebangs = ["groovy"]
 comment-token = "//"
+language-servers = [ "groovy-ls" ]
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "groovy-lsp" ]
 
 [[grammar]]
 name = "groovy"
 source = { git = "https://github.com/murtaza64/tree-sitter-groovy", rev = "235009aad0f580211fc12014bb0846c3910130c1" }
+
+[[language]]
+name = "haskell"
+scope = "source.haskell"
+injection-regex = "hs|haskell"
+file-types = ["hs", "hs-boot", "hsc"]
+roots = ["Setup.hs", "stack.yaml", "cabal.project"]
+comment-token = "--"
+block-comment-tokens = { start = "{-", end = "-}" }
+language-servers = [ "haskell-language-server" ]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "xml"
+scope = "source.xml"
+injection-regex = "xml"
+file-types = [
+  "xml",
+  "mobileconfig",
+  "plist",
+  "xib",
+  "storyboard",
+  "svg",
+  "xsd",
+  "gml",
+  "xaml",
+  "gir",
+  "rss",
+  "atom",
+  "opml",
+  "policy",
+  "ascx",
+  "axml",
+  "axaml",
+  "bpmn",
+  "cpt",
+  "csl",
+  "csproj.user",
+  "dita",
+  "ditamap",
+  "dtml",
+  "fxml",
+  "iml",
+  "isml",
+  "jmx",
+  "launch",
+  "menu",
+  "mxml",
+  "nuspec",
+  "osc",
+  "osm",
+  "pt",
+  "publishsettings",
+  "pubxml",
+  "pubxml.user",
+  "rbxlx",
+  "rbxmx",
+  "rng",
+  "shproj",
+  "tld",
+  "tmx",
+  "vbproj.user",
+  "vcxproj",
+  "vcxproj.filters",
+  "wsdl",
+  "wxi",
+  "wxs",
+  "xbl",
+  "xlf",
+  "xliff",
+  "xpdl",
+  "xul",
+  "xoml",
+  "musicxml",
+  "glif",
+  "ui"
+]
+block-comment-tokens = { start = "<!--", end = "-->" }
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "xml-server" ]
