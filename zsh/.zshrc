@@ -14,7 +14,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ########################### PLUGINS ########################
 
-plugins=( git zsh-syntax-highlighting zsh-autosuggestions aws gcloud npm sdk )
+# plugins=( git zsh-syntax-highlighting zsh-autosuggestions aws gcloud npm SDK )
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 
