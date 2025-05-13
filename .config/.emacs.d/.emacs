@@ -177,7 +177,6 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
-
 ;; RUST
 (add-hook 'rust-mode-hook 'lsp-deferred)
 
@@ -276,6 +275,21 @@
 ;; Show column numbers by default
 (setq column-number-mode t)
 
+;; Highlight the line we are currently on
+;(global-hl-line-mode t)
+
+;; Auto-wrap at 80 characters
+(setq-default auto-fill-function 'do-auto-fill)
+(setq-default fill-column 80)
+(turn-on-auto-fill)
+
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+;(when (fboundp 'scroll-bar-mode)
+ ; (scroll-bar-mode 0))
+
+(setq-default tab-width 4)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;; THEME
 
@@ -286,10 +300,3 @@
 ;(use-package leuven-theme
  ; :config
  ; (load-theme 'leuven-dark t))
-
-(tool-bar-mode 0)
-(menu-bar-mode 0)
-;(when (fboundp 'scroll-bar-mode)
- ; (scroll-bar-mode 0))
-
-(setq-default tab-width 4)
