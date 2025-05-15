@@ -2,15 +2,10 @@
 ;; Set packages to install
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq package-archive-priorities '(("gnu" . 10)
-                                   ("melpa" . 5))
-      package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("melpa" . "https://stable.melpa.org/packages/")
-						 
-                         )
+(setq package-archives '( ("gnu" . "https://elpa.gnu.org/packages/")
+                          ("melpa" . "https://stable.melpa.org/packages/")
+			)
 )
-
-(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
 
 ;; Install use-package that we require for managing all other dependencies
 (unless (package-installed-p 'use-package)
@@ -24,10 +19,9 @@
                                ;; restore after startup
                                (setq gc-cons-threshold 800000)))
 
-
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
-;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; inline errors
 
 (use-package flycheck :ensure t :init (global-flycheck-mode))
@@ -49,7 +43,7 @@
 
 (use-package dap-java :ensure nil)
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Setup use-package
 ;(eval-when-compile
 ;  (require 'use-package))
@@ -61,7 +55,7 @@
   :init
   (which-key-mode)
 )
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package quickrun 
 :ensure t
 :bind ("C-c r" . quickrun))
@@ -111,7 +105,7 @@
         ("<tab>". tab-indent-or-complete)
         ("TAB". tab-indent-or-complete)))
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package yasnippet
   :ensure
   :config
@@ -119,6 +113,7 @@
   (add-hook 'prog-mode-hook 'yas-minor-mode)
   (add-hook 'text-mode-hook 'yas-minor-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Setup loading company-jedi for python completion
 ;; This requines running jedi:install-server the first time
 (use-package company-jedi
@@ -171,13 +166,15 @@
   :ensure t
   :mode (".md" ".markdown"))
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;; auto complete
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; RUST
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-hook 'rust-mode-hook 'lsp-deferred)
 
 ;;; Projectile
@@ -221,7 +218,7 @@
     (setq-local buffer-save-without-query t))
   (add-hook 'before-save-hook 'lsp-format-buffer nil t))
 
-;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package helm
   :ensure t
   :init 
@@ -236,8 +233,9 @@
 (("C-c f" . helm-recentf))   ;; Add new key to recentf
 (("C-c g" . helm-grep-do-git-grep)))  ;; Search using grep in a git project
 
-;;;;;;;;;;;;;;;;;;;;;; JAVA
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; JAVA
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package lsp-mode
 :ensure t
 :hook (
@@ -291,8 +289,8 @@
 (setq-default tab-width 4)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;; THEME
-
+;; THEME
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;(load-theme 'leuven t)                  ; For Emacs 24+.
 
 (load-theme 'leuven-dark t)
