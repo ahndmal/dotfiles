@@ -4,6 +4,7 @@
 
 (setq package-archives '( ("gnu" . "https://elpa.gnu.org/packages/")
                           ("melpa" . "https://stable.melpa.org/packages/")
+			  ("dev" . "https://melpa.org/packages/")
 			)
 )
 
