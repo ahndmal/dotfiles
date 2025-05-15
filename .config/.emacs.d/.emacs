@@ -1,18 +1,26 @@
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Set packages to install
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq package-archives '( ("gnu" . "https://elpa.gnu.org/packages/")
-                          ("melpa" . "https://stable.melpa.org/packages/")
-			  ("dev" . "https://melpa.org/packages/")
+(setq package-archives '(
+			 ("gnu" . "https://elpa.gnu.org/packages/")
+                         ("melpa" . "https://stable.melpa.org/packages/")
+			 ("dev" . "https://melpa.org/packages/")
 			)
 )
+
+(package-initialize)
 
 ;; Install use-package that we require for managing all other dependencies
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-(require 'use-package)
+
+(eval-when-compile
+  (require 'use-package))
+
+(setq use-package-always-ensure t)
 
 ;; we increase it during initialization.
 (setq gc-cons-threshold 64000000)
@@ -20,9 +28,10 @@
                                ;; restore after startup
                                (setq gc-cons-threshold 800000)))
 
+
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; inline errors
 
 (use-package flycheck :ensure t :init (global-flycheck-mode))
@@ -44,7 +53,7 @@
 
 (use-package dap-java :ensure nil)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; Setup use-package
 ;(eval-when-compile
 ;  (require 'use-package))
@@ -56,7 +65,7 @@
   :init
   (which-key-mode)
 )
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package quickrun 
 :ensure t
 :bind ("C-c r" . quickrun))
@@ -106,7 +115,7 @@
         ("<tab>". tab-indent-or-complete)
         ("TAB". tab-indent-or-complete)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package yasnippet
   :ensure
   :config
@@ -114,7 +123,6 @@
   (add-hook 'prog-mode-hook 'yas-minor-mode)
   (add-hook 'text-mode-hook 'yas-minor-mode))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Setup loading company-jedi for python completion
 ;; This requines running jedi:install-server the first time
 (use-package company-jedi
@@ -126,19 +134,6 @@
   (add-hook 'python-mode-hook 'my/python-mode-hook)
   )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; autopair
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Automatically at closing brace, bracket and quote
-(use-package autopair
-  :ensure t
-  :init
-  (eval-when-compile
-    ;; Silence missing function warnings
-    (declare-function autopair-global-mode "autopair.el"))
-  :config
-  (autopair-global-mode t)
-)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; yaml-mode
@@ -167,15 +162,13 @@
   :ensure t
   :mode (".md" ".markdown"))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;;;; auto complete
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; RUST
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-hook 'rust-mode-hook 'lsp-deferred)
 
 ;;; Projectile
@@ -219,7 +212,7 @@
     (setq-local buffer-save-without-query t))
   (add-hook 'before-save-hook 'lsp-format-buffer nil t))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;
 (use-package helm
   :ensure t
   :init 
@@ -234,9 +227,8 @@
 (("C-c f" . helm-recentf))   ;; Add new key to recentf
 (("C-c g" . helm-grep-do-git-grep)))  ;; Search using grep in a git project
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; JAVA
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;; JAVA
+
 (use-package lsp-mode
 :ensure t
 :hook (
@@ -290,12 +282,31 @@
 (setq-default tab-width 4)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; THEME
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(load-theme 'leuven t)                  ; For Emacs 24+.
+;;;;;;;;;;;;;;;;; THEME
 
-(load-theme 'leuven-dark t)
+(use-package leuven-theme :ensure)
+(use-package modus-themes :ensure)
+(use-package ef-themes :ensure)
+
+;(load-theme 'leuven t)
+(load-theme 'modus-operandi t)
 
 ;(use-package leuven-theme
  ; :config
  ; (load-theme 'leuven-dark t))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(standard-themes ef-themes modus-themes autopair toml-mode yapfify yaml-mode window-numbering which-key swiper rustic rainbow-mode rainbow-delimiters quickrun projectile omnisharp modern-cpp-font-lock lsp-ui lsp-java leuven-theme jsonnet-mode json-mode javadoc-lookup java-imports helm-lsp elpy dash-functional company-jedi clojure-mode clang-format auto-package-update)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
