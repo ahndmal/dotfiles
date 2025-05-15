@@ -1,4 +1,3 @@
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Set packages to install
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -28,10 +27,17 @@
                                ;; restore after startup
                                (setq gc-cons-threshold 800000)))
 
+;;;;;;;;;;;;;;;;;;;;;;
+;; SELECTRUM
 
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(use-package selectrum
+  :ensure
+  :init
+  (selectrum-mode)
+  :custom
+  (completion-styles '(flex substring partial-completion)))
 
-;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+;;;;;;;;;;;;;;;;;;;;;;
 ;; inline errors
 
 (use-package flycheck :ensure t :init (global-flycheck-mode))
@@ -73,6 +79,10 @@
 ;; so we can (require 'use-package) even in compiled emacs to e.g. read docs
 (use-package use-package
   :commands use-package-autoload-keymap)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Window numbering
@@ -133,7 +143,6 @@
     (add-to-list 'company-backends 'company-jedi))
   (add-hook 'python-mode-hook 'my/python-mode-hook)
   )
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; yaml-mode
@@ -212,7 +221,8 @@
     (setq-local buffer-save-without-query t))
   (add-hook 'before-save-hook 'lsp-format-buffer nil t))
 
-;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;; HELM ;;;;;;;;;;;;;;;;;;
 (use-package helm
   :ensure t
   :init 
@@ -227,7 +237,8 @@
 (("C-c f" . helm-recentf))   ;; Add new key to recentf
 (("C-c g" . helm-grep-do-git-grep)))  ;; Search using grep in a git project
 
-;;;;;;;;;;;;;;;;;;;;;; JAVA
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;; JAVA ;;;;;;;;;;;;;;;;;;
 
 (use-package lsp-mode
 :ensure t
@@ -294,7 +305,6 @@
 ;(use-package leuven-theme
  ; :config
  ; (load-theme 'leuven-dark t))
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (custom-set-variables
