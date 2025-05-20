@@ -1,0 +1,7 @@
+
+- ripgrep
+- fd
+- 
+
+$ sudo pacman -S ripgrep
+
