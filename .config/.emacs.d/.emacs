@@ -238,6 +238,10 @@
 (("C-c g" . helm-grep-do-git-grep)))  ;; Search using grep in a git project
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;; Clojure ;;;;;;;;;;;;;;;;;;
+(use-package cider)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;; JAVA ;;;;;;;;;;;;;;;;;;
 
 (use-package lsp-mode
