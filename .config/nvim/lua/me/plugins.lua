@@ -2,14 +2,15 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim' -- this is essential.
    
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
 	requires = {{'nvim-lua/plenary.nvim'}}
     }
 
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use 'nvim-lua/plenary.nvim'
 
     vim.cmd('colorscheme rose-pine')
-
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
+		
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     
     use("github/copilot.vim")
@@ -27,5 +28,5 @@ return require('packer').startup(function(use)
     use 'sheerun/vim-polyglot'
 
     -- 'morhetz/gruvbox'
-    -- Plug 'patstockwell/vim-monokai-tasty'
+    use 'patstockwell/vim-monokai-tasty'
 end)
