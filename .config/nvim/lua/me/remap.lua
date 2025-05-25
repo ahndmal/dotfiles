@@ -3,15 +3,14 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("n", "<C-c>", "<Esc>")
-vim.keymap.set("n", "<leader><leader>p", ":Prettier<cr>")
-vim.keymap.set("n", " <leader>rn", "<Plug>(coc-rename)")
-vim.keymap.set("n", "<leader>gd", "<Plug>(coc-definition)" )
 
 -- Coc
 vim.keymap.set("n", "<leader>gr", "<cmd><Plug>(coc-references)" )
+vim.keymap.set("n", "<leader>gd", "<Plug>(coc-definition)" )
 vim.keymap.set("n", "<leader>t", "<cmd>:NERDTree<cr>" )
+vim.keymap.set("n", " <leader>rn", "<Plug>(coc-rename)")
 
--- prettier
+-- Prettier
 vim.keymap.set("n", "<leader><leader>p", ":Prettier<cr>" )
 vim.keymap.set("n", "<leader><leader>g", ":GoFmt<cr>" )
 vim.keymap.set("n", "<leader><leader>b", ":Black<cr>" )
@@ -25,5 +24,4 @@ vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>")
 vim.keymap.set("n", "L", "<cmd>bnext<cr>")
 vim.keymap.set("n", "H", "<cmd>bprevious<cr>")
 vim.keymap.set("n", "F", "<cmd>HopPattern<cr>")
-
 
