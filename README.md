@@ -23,9 +23,6 @@ Config of my environment.
 
 ## ZSH
 
-# Oh my zsh.
-<p align="center"><img src="https://s3.amazonaws.com/ohmyzsh/oh-my-zsh-logo.png" alt="Oh My Zsh"></p>
-
 ## Install ZSH.
 ```
 sudo apt install zsh-autosuggestions zsh-syntax-highlighting zsh
@@ -71,7 +68,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
  - [zsh-fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting)
  - [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
 
-### Neovim
+## Neovim
 
 Two ways to configure:
 1. Using vimrs/init.vim (+ plugin manager https://github.com/junegunn/vim-plug)
@@ -91,7 +88,7 @@ Create structure for lua files:
   - set.lua
   - telescope.lua
 
-### Helix
+## Helix
 Config in ~/.config/helix:
 - config.toml (general configuration)
 - languages.toml (configuration for language servers for languages: https://github.com/ahndmal/.dotfiles/blob/main/helix/languages.toml)
@@ -118,3 +115,35 @@ https://github.com/ahndmal/dotfiles/blob/main/.config/.emacs.d/.emacs
 - Fira code (https://github.com/tonsky/FiraCode)
 - Powerline https://github.com/powerline/fonts
 - Nerd fonts (https://www.nerdfonts.com/)
+
+ ---------------- Tools --------------
+CLI
+- ZSH
+- OMZ
+- Alacritty
+- Kitty
+- Konsole (KDE)
+- tmux / Zellij
+
+SDK
+- JDK (SDKman)
+- Dotnet
+- Go
+- Rust (rustup)
+- PyEnv
+- NVM / FNM
+- GHCUp
+
+Editors
+- Helix
+- Neovin
+- Emacs
+- Sublime
+- JB Toolbox
+
+Graphics
+- Krita
+- Inkscape
+- Flameshot
+- VLC player
+
