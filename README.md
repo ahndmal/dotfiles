@@ -147,3 +147,7 @@ Graphics
 - Flameshot
 - VLC player
 
+Themes
+- https://tinted-theming.github.io/base16-emacs/
+- https://emacsthemes.com/themes/leuven-theme.html
+- 
