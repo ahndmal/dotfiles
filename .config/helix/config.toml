@@ -3,7 +3,7 @@
 theme = "catppuccin_frappe"
 
 [editor]
-#line-number = "relative"
+line-number = "relative"
 mouse = false
 
 [editor.cursor-shape]
@@ -24,13 +24,13 @@ C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix 
 p = ":insert-output echo -n 'println(\"\")'"
 
 ### Java
-[keys.insert.J]
-"l" = { w = [":insert-output echo -n 'LOG.warn();'"] }
+[keys.normal.J]
+"l" = { "w" = [":insert-output echo -n 'LOG.warn();'"] }
 "p" = ":insert-output echo -n 'System.out.println(\"\");'"
 "m" = { "m" = ":insert-output echo -n 'public static void main(String[] args) {};'"}
 
 ### TS
-[keys.insert.T]
+[keys.normal.T]
 "p" = ":insert-output echo -n 'console.log(\"\");'"
 
 ### Python
