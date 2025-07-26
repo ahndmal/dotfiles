@@ -9,10 +9,10 @@ source $ZSH/oh-my-zsh.sh
 
 
 ###################### ENV                                                    
-set ATLAS_HOME ""                                                          
-set GO_HOME "/home/andrii/tools/go"                                           
-set JDTLS_HOME "/home/andrii/tools/lss/jdtls"                                 
-set KLS_HOME "/home/andrii/tools/kotlin-language-server/server/build/install/s
+export ATLAS_HOME=""                                                          
+export GO_HOME="/home/andrii/tools/go"                                           
+export JDTLS_HOME="/home/andrii/tools/lss/jdtls"                                 
+export KLS_HOME="/home/andrii/tools/kotlin-language-server/server/build/install/s
 
 ###################### PATH                                                   
 
