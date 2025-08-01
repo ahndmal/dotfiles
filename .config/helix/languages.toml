@@ -7,13 +7,51 @@
 #config = { provideFormatter = true }
 #environment = { "ENV1" = "value1", "ENV2" = "value2" }
 
+[language-server.groovy-lsp]
+command = "java"
+args = ["-jar", "/home/andrii/tools/groovy-language-server/build/libs/groovy-language-server-all.jar"]
+#config = { provideFormatter = true }
+environment = { "ENV1" = "value1", "ENV2" = "value2" }                                                         3   
+
 [language-server]
 xml-server = { "command" = "java -jar /home/andrii/tools/lemminx/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar" }
 clojure-lsp = { command = "clojure-lsp" }
-groovy-lsp = { command = "java -jar xxx/groovy-language-server-all.jar" }
+#groovy-ls = { command = "java -jar /home/andrii/tools/groovy-language-server/build/libs/groovy-language-server-all.jar" }
+#kotlin-lsp = { command = "/home/andrii/tools/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"}
+vlang-language-server = { command = "v-analyzer" }
 
 ##################################
 
+[[language]]
+name = "zig"
+scope = "source.zig"
+injection-regex = "zig"
+file-types = ["zig", "zon"]
+roots = ["build.zig"]
+auto-format = true
+comment-tokens = ["//", "///", "//!"]
+language-servers = [ "zls" ]
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "zig" , args = ["fmt", "--stdin"] }
+
+##### V
+[[language]]
+name = "v"
+scope = "source.v"
+file-types = ["v", "vv", "vsh"]
+shebangs = ["v run"]
+roots = ["v.mod"]
+language-servers = [ "vlang-language-server" ]
+auto-format = true
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+indent = { tab-width = 4, unit = "\t" }
+
+[[grammar]]
+name = "v"
+source = {git = "https://github.com/vlang/v-analyzer", subpath = "tree_sitter_v", rev = "59a8889d84a293d7c0366d14c8dbb0eec24fe889"}
+
+##### Zig
 [[language]]
 name = "rust"
 scope = "source.rust"
@@ -31,6 +69,17 @@ block-comment-tokens = [
 language-servers = [ "rust-analyzer" ]
 indent = { tab-width = 4, unit = "    " }
 persistent-diagnostic-sources = ["rustc", "clippy"]
+
+### Clojure
+[[language]]
+name = "clojure"
+scope = "source.clojure"
+injection-regex = "(clojure|clj|edn|boot)"
+file-types = ["clj", "cljs", "cljc", "clje", "cljr", "cljx", "edn", "boot"]
+roots = ["project.clj", "build.boot", "deps.edn", "shadow-cljs.edn"]
+comment-token = ";"
+language-servers = [ "clojure-lsp" ]
+indent = { tab-width = 2, unit = "  " }
 
 ### JAVA
 [[language]]
@@ -76,7 +125,7 @@ language-servers = [ "pylsp" ]
 # TODO: pyls needs utf-8 offsets
 indent = { tab-width = 4, unit = "    " }
 
-
+### Groovy
 [[language]]
 name = "groovy"
 language-id = "groovy"
