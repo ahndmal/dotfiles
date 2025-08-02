@@ -11,7 +11,8 @@
 command = "java"
 args = ["-jar", "/home/andrii/tools/groovy-language-server/build/libs/groovy-language-server-all.jar"]
 #config = { provideFormatter = true }
-environment = { "ENV1" = "value1", "ENV2" = "value2" }                                                         3   
+environment = { "ENV1" = "value1", "ENV2" = "value2" }
+
 
 [language-server]
 xml-server = { "command" = "java -jar /home/andrii/tools/lemminx/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar" }
