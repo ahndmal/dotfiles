@@ -32,19 +32,18 @@ export PATH=$PATH:/usr/local/go/bin
 
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-
 ###################### ALIAS
 
 alias hx helix                                                                
 alias ems "emacs -nw"  
 
 # Replace ls with eza                                                         
-alias ls 'eza -al --color=always --group-directories-first --icons' # preferre
-alias lsz 'eza -al --color=always --total-size --group-directories-first --ico
-alias la 'eza -a --color=always --group-directories-first --icons'  # all file
-alias ll 'eza -l --color=always --group-directories-first --icons'  # long for
-alias lt 'eza -aT --color=always --group-directories-first --icons' # tree lis
-alias l. 'eza -ald --color=always --group-directories-first --icons .*' # show
+alias ls='eza -al --color=always --group-directories-first --icons' # preferre
+alias lsz='eza -al --color=always --total-size --group-directories-first --ico
+alias la='eza -a --color=always --group-directories-first --icons'  # all file
+alias ll='eza -l --color=always --group-directories-first --icons'  # long for
+alias lt='eza -aT --color=always --group-directories-first --icons' # tree lis
+alias l.='eza -ald --color=always --group-directories-first --icons .*' # show
 
 #### Common use                                                                  
 alias .. 'cd ..'                                                              
