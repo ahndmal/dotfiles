@@ -14,7 +14,7 @@ export EDITOR='hx'
 export ATLAS_HOME=""                                                          
 export GO_HOME="/home/andrii/tools/go"
 export JDTLS_HOME="/home/andrii/tools/lss/jdtls"
-export KLS_HOME="/home/andrii/tools/kotlin-language-server/server/build/install/s
+export KLS_HOME="/home/andrii/tools/kotlin-language-server/server/build/install/..."
 export GRAALVM_HOME=/home/andrii/.sdkman/candidates/java/22.3.r19-grl
 
 ###################### PATH                                                   
@@ -25,7 +25,6 @@ export PATH="$PATH:$KLS_HOME/bin"
 
 
 export PATH=$PATH:/usr/local/bin/aws
-export PATH=$PATH:/home/andrii/v
 export GOROOT=/usr/local/go
 export PATH=$PATH:/usr/local/go/bin
 
