@@ -304,9 +304,9 @@
 (use-package leuven-theme :ensure)
 (use-package modus-themes :ensure)
 (use-package ef-themes :ensure)
+(use-package kanagawa-themes :ensure)
 
-;(load-theme 'leuven t)
-(load-theme 'modus-operandi t)
+(load-theme 'kanagawa-wave t)
 
 ;(use-package leuven-theme
  ; :config
