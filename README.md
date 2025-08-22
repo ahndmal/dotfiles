@@ -88,6 +88,12 @@ Create structure for lua files:
   - set.lua
   - telescope.lua
 
+#### Themes
+- [Monokai Tasty](https://github.com/patstockwell/vim-monokai-tasty)
+- [Github theme](https://github.com/projekt0n/github-nvim-theme)
+- [Rose Pine](https://github.com/rose-pine/vim)
+- [Kanagawa theme](https://github.com/zikajk/emacs-kanagawa-theme)
+
 ## Helix
 Config in ~/.config/helix:
 - config.toml (general configuration)
@@ -108,7 +114,11 @@ https://github.com/ahndmal/dotfiles/blob/main/.config/.emacs.d/.emacs
 - window-numbering
 - autopair
 - auto-complete
-- 
+- dirvish
+
+### Emacs theme
+- [Kanagawa theme](https://github.com/zikajk/emacs-cobrakai-theme)
+- ef theme
 
 ## Fonts
 
