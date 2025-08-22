@@ -118,7 +118,7 @@ https://github.com/ahndmal/dotfiles/blob/main/.config/.emacs.d/.emacs
 
 ### Emacs theme
 - [Kanagawa theme](https://github.com/zikajk/emacs-cobrakai-theme)
-- ef theme
+- [Leuven](https://emacsthemes.com/themes/leuven-theme.html)
 
 ## Fonts
 
@@ -126,38 +126,30 @@ https://github.com/ahndmal/dotfiles/blob/main/.config/.emacs.d/.emacs
 - Powerline https://github.com/powerline/fonts
 - Nerd fonts (https://www.nerdfonts.com/)
 
- ---------------- Tools --------------
-CLI
-- ZSH
-- OMZ
+## Tools
+ 
+### CLI
 - Alacritty
 - Kitty
+- Ghostty
 - Konsole (KDE)
 - tmux / Zellij
 
-SDK
-- JDK (SDKman)
-- Dotnet
-- Go
+## SDK
+- JDK ([SDKman](https://sdkman.io/))
+- [Dotnet](https://dotnet.microsoft.com/en-us/download)
+- [Go](http://go.dev/)
 - Rust (rustup)
-- PyEnv
+- [PyEnv](https://github.com/pyenv/pyenv)
 - NVM / FNM
-- GHCUp
+- [GHCUp](https://www.haskell.org/ghcup/)
+- [Clojure](https://clojure.org)
+- WASM tools
 
-Editors
-- Helix
-- Neovin
-- Emacs
-- Sublime
-- JB Toolbox
-
-Graphics
+## Graphics
 - Krita
 - Inkscape
 - Flameshot
 - VLC player
+- MPlayer
 
-Themes
-- https://tinted-theming.github.io/base16-emacs/
-- https://emacsthemes.com/themes/leuven-theme.html
-- 
