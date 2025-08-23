@@ -20,6 +20,7 @@ clojure-lsp = { command = "clojure-lsp" }
 #groovy-ls = { command = "java -jar /home/andrii/tools/groovy-language-server/build/libs/groovy-language-server-all.jar" }
 #kotlin-lsp = { command = "/home/andrii/tools/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"}
 vlang-language-server = { command = "v-analyzer" }
+rust-ls = { command = "/home/andrii/tools/lss/rust-analyzer-x86_64-unknown-linux-gnu/rust-analyzer-x86_64-unknown-linux-gnu" } 
 
 ##################################
 
@@ -67,7 +68,7 @@ block-comment-tokens = [
   { start = "/**", end = "*/" },
   { start = "/*!", end = "*/" },
 ]
-language-servers = [ "rust-analyzer" ]
+language-servers = [ "rust-ls" ]
 indent = { tab-width = 4, unit = "    " }
 persistent-diagnostic-sources = ["rustc", "clippy"]
 
