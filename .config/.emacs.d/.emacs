@@ -302,15 +302,17 @@
 ;;;;;;;;;;;;;;;;; THEME
 
 (use-package leuven-theme :ensure)
-(use-package modus-themes :ensure)
-(use-package ef-themes :ensure)
+;(use-package modus-themes :ensure)
+;(use-package ef-themes :ensure)
 (use-package kanagawa-themes :ensure)
+(use-package monokai-theme :ensure)
 
 (load-theme 'kanagawa-wave t)
+; (load-theme 'monokai t)
 
 ;(use-package leuven-theme
- ; :config
- ; (load-theme 'leuven-dark t))
+;  :config
+;  (load-theme 'leuven-dark t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (custom-set-variables
