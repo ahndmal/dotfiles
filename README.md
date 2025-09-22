@@ -7,33 +7,79 @@
 
 Config of my environment.
 
-* CLI
-  * ZSH / FISH
-* 
+- [ ] shell
+  - [ ] zsh / omz / fish
+  - [ ] omz plugins
+  - [ ] tmux / zellij
+  - [ ] alacritty / ghostty
+- [ ] editors
+  - [ ] helix
+  - [ ] neovim
+  - [ ] emacs
+  - [ ] JB Idea
+- [ ] lang
+  - [ ] go
+  - [ ] gcc
+  - [ ] sdkman
+    - [ ] jvm
+    - [ ] kotlin
+    - [ ] groovy
+    - [ ] maven
+    - [ ] gradle
+  - [ ] pyenv
+  - [ ] nvm
+  - [ ] rustup
+  - [ ] cargo
+  - [ ] ghcup
+- [ ] langservers
+  - [ ] jdtls
+  - [ ] groovyls
+  - [ ] kotlin-ls
+  - [ ] gopls
+  - [ ] pyright
+  - [ ] ts-lsp
+  - [ ] rustic (emacs)
+  - [ ] cider (emacs)
+- [ ] graphics
+  - [ ] gimp
+  - [ ] krita
+  - [ ] inkscape
+  - [ ] flameshot
+- [ ] net
+  - [ ] httpie
+  - [ ] apache benchmark
+  - [ ] locust
+  - [ ] grpc-cli
+- [ ] wasm
+  - [ ] wabt tools
+  - [ ] emscrypten
+  - [ ] wasmtime
+  - [ ] graal wasm
+- [ ] doc parsing
+  - [ ] pandoc
+  - [ ] QPDF
+  - [ ] pdf2dom
+  - [ ] 
 
-## Prerequisites
-* OhMZsh + plugins + powerlevel10k
-* vim-plug / Packer
-* tmux / zellij
-* Language servers (https://github.com/helix-editor/helix/wiki/Language-Server-Configurations)
+vim-plug / Packer
 
-## Language servers
+## [Language servers](https://github.com/helix-editor/helix/wiki/Language-Server-Configurations)
 - https://github.com/helix-editor/helix/wiki/Language-Server-Configurations
 - https://langserver.org/
 
 ## ZSH
 
-## Install ZSH.
+Install ZSH.
 ```
-sudo apt install zsh-autosuggestions zsh-syntax-highlighting zsh
+sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting
 ```
 
-## Install Oh my ZSH.
+Install Oh my ZSH.
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-## Install plugins.
+Install plugins.
  - autosuggesions plugin
  
 	`git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
@@ -70,7 +116,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ## Neovim
 
-Two ways to configure:
+Ways to configure:
 1. Using vimrs/init.vim (+ plugin manager https://github.com/junegunn/vim-plug)
     ```bash
         sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
