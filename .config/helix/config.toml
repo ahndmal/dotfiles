@@ -1,4 +1,3 @@
-#theme = "onedark"
 theme = "catppuccin_frappe"
 
 [editor]
@@ -26,7 +25,8 @@ p = ":insert-output echo -n 'println(\"\")'"
 ### Java
 [keys.normal.C-j]
 "l" = { "w" = [":insert-output echo -n 'LOG.warn();'"] }
-"p" = ":insert-output echo -n 'System.out.println(\"\");'"
+"p" = { "s" = [":insert-output echo -n 'private static '"] }
+"s" = { "p" = [":insert-output echo -n 'System.out.println(\"\");'"] }
 "m" = { "m" = ":insert-output echo -n 'public static void main(String[] args) {};'"}
 
 ### Kotlin
@@ -37,9 +37,9 @@ p = ":insert-output echo -n 'println(\"\")'"
 [keys.normal.C-t]
 "p" = ":insert-output echo -n 'console.log(\"\");'"
 
+
 ### Python
 [keys.normal.C-p]
 #"p" = ["insert_mode", "TEST!"]
 "`" = { p = ["normal_mode", ":pipe echo '```python'", "collapse_selection", "insert_mode"] }
-
 
