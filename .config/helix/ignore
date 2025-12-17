@@ -5,3 +5,6 @@ target/
 .fleet/
 .maven
 .gradle
+new-dist/
+obj/
+bin/
