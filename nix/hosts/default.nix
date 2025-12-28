@@ -24,76 +24,42 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-
-  ########################################### DOCKER
-  virtualisation.docker.enable = true;
-
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
-
-
-  ################################## Bluetooth
-  hardware.bluetooth.enable = true;
-
-
-  #################### FONTS
-  fonts.packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Terminus"]; })
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      liberation_ttf
-      fira-code
-      fira-code-symbols
-      mplus-outline-fonts.githubRelease
-      dina-font
-      proggyfonts
-  ];
-
   # Set your time zone.
   time.timeZone = "Europe/Kyiv";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  nixpkgs.config = {
-    # contentAddressedByDefault = true;
-    allowUnfree = true;
-  };
-
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "tr_TR.UTF-8";
-    LC_IDENTIFICATION = "tr_TR.UTF-8";
-    LC_MEASUREMENT = "tr_TR.UTF-8";
-    LC_MONETARY = "tr_TR.UTF-8";
-    LC_NAME = "tr_TR.UTF-8";
-    LC_NUMERIC = "tr_TR.UTF-8";
-    LC_PAPER = "tr_TR.UTF-8";
-    LC_TELEPHONE = "tr_TR.UTF-8";
-    LC_TIME = "tr_TR.UTF-8";
+    LC_ADDRESS = "uk_UA.UTF-8";
+    LC_IDENTIFICATION = "uk_UA.UTF-8";
+    LC_MEASUREMENT = "uk_UA.UTF-8";
+    LC_MONETARY = "uk_UA.UTF-8";
+    LC_NAME = "uk_UA.UTF-8";
+    LC_NUMERIC = "uk_UA.UTF-8";
+    LC_PAPER = "uk_UA.UTF-8";
+    LC_TELEPHONE = "uk_UA.UTF-8";
+    LC_TIME = "uk_UA.UTF-8";
   };
 
   # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -111,46 +77,79 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  ########################################### DOCKER
+  virtualisation.docker.enable = true;
+
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
+
+  ################################## Bluetooth
+  hardware.bluetooth.enable = true;
+
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.andrii = {
     isNormalUser = true;
     description = "andrii";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
+        fish
+        htop
+        vim # ion.nix! The Nano editor is also installed by default.
+        wget
+        pkgs.neovim
+        pkgs.emacs
+        pkgs.git
+        pkgs.helix
+        pkgs.zip
+        pkgs.unzip
+        pkgs.go
+        pkgs.zulu17
+        pkgs.java-language-server
+        pkgs.zulu8
+        pkgs.jetbrains-toolbox
+        pkgs.eza
+        brave
+        pyenv
+        fnm
+        pkgs.btop
+        awscli2
+        pkgs.azure-cli
+        pkgs.google-cloud-sdk
+        pkgs.rust-analyzer
+        pkgs.rustup
+        pkgs.jdt-language-server
+        pkgs.groovy
+        pkgs.kotlin-language-server
+        pkgs.kotlin
+        pkgs.maven
+        pkgs.gradle
+        pkgs.krita
+        pkgs.gimp
+        pkgs.inkscape
+        pkgs.gparted
+        pkgs.zellij
+        pkgs.tmux
+        pkgs.brave
     ];
   };
 
   users.extraGroups.docker.members = [ "andrii" ];
-
-
+  
   # Install firefox.
   programs.firefox.enable = true;
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    neovim
-    pkgs.git
-    pkgs.helix
-    pkgs.zip
-    pkgs.unzip
-    pkgs.go
-    pkgs.zulu17
-    pkgs.java-language-server
-    pkgs.zulu8
-    pkgs.jetbrains-toolbox
-    pkgs.eza
-    brave
-    pyenv
-    fnm
-    awscli2
-    azure-cli
-    google-cloud-sdk
-
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -178,8 +177,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
-
+  system.stateVersion = "25.11"; # Did you read the comment?
 
   ############## GC
   nix.gc = {
@@ -187,5 +185,11 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
   };
+
+  ################ ALIASES
+ # environment.shellAliases = {
+ #     lsa = "eza -la";
+ #     ll = "ls -l";
+ # }  
 
 }
