@@ -51,9 +51,9 @@ Config of my environment.
   - [ ] locust
   - [ ] grpc-cli
 - [ ] wasm
-  - [ ] wabt tools
-  - [ ] emscrypten
-  - [ ] wasmtime
+  - [ ] [wabt tools](https://github.com/webassembly/wabt)
+  - [ ] [emscrypten](https://emscripten.org/)
+  - [ ] [wasmtime](https://wasmtime.dev/)
   - [ ] graal wasm
 - [ ] doc parsing
   - [ ] pandoc
