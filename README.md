@@ -31,7 +31,8 @@ Config of my environment.
   - [ ] rustup
   - [ ] cargo
   - [ ] ghcup
-- [ ] langservers
+  - [ ] dotnet sdk / runtime
+- [ ] lang-servers
   - [ ] jdtls
   - [ ] groovyls
   - [ ] kotlin-ls
@@ -52,14 +53,14 @@ Config of my environment.
   - [ ] grpc-cli
 - [ ] wasm
   - [ ] [wabt tools](https://github.com/webassembly/wabt)
+  - [ ] [wasm tools](https://github.com/bytecodealliance/wasm-tools)
   - [ ] [emscrypten](https://emscripten.org/)
   - [ ] [wasmtime](https://wasmtime.dev/)
   - [ ] graal wasm
 - [ ] doc parsing
   - [ ] pandoc
   - [ ] QPDF
-  - [ ] pdf2dom
-  - [ ] 
+  - [ ] pdf2dom 
 
 vim-plug / Packer
 
