@@ -1,0 +1,65 @@
+### javac
+
+javac -classpath /examples /examples/greetings/Hi.java
+javac -d myDirectory
+javac --enable-preview
+
+### jar
+
+jar --create --file classes.jar Foo.class Bar.class
+jar --create --date="2021-01-06T14:36:00+02:00" --file=classes.jar Foo.class Bar.class
+jar --create --file classes.jar --manifest mymanifest -C foo/
+jar --create --file foo.jar --main-class com.foo.Main --module-version 1.0 -C foo/classes resources
+jar --update --file foo.jar --main-class com.foo.Main --module-version 1.0 -C foo/module-info.class
+jar --create --file foo.jar --main-class com.foo.Hello -C classes . --release 10 -C classes-10 .
+jar --create --file my.jar @classes.list
+
+jar -tf foo.jar
+
+jar -xf foo.jar -C /tmp/bar/
+jar --extract --file foo.jar --dir /tmp/bar/
+
+-c or --create
+Creates the archive.
+-i FILE or --generate-index=FILE
+Generates index information for the specified JAR file. This option is deprecated and may be removed in a future release.
+-t or --list
+Lists the table of contents for the archive.
+-u or --update
+Updates an existing JAR file.
+-x or --extract
+Extracts the named (or all) files from the archive. If a file with the same name appears more than once in the archive, each copy will be extracted, with later copies overwriting (replacing) earlier copies unless -k is specified.
+-d or --describe-module
+Prints the module descriptor or automatic module name.
+--validate
+Validate the contents of the JAR file. See Integrity of a JAR File section below for more details.
+
+### java
+
+java -jar name.jar
+
+### jcmd
+
+jcmd [pid | main-class] command... | PerfCounter.print | -f filename
+jcmd [-l]
+jcmd -h
+
+main-class
+When used, the jcmd utility sends the diagnostic command request to all Java processes with the specified name of the main class.
+command
+The command must be a valid jcmd command for the selected JVM. The list of available commands for jcmd is obtained by running the help command (jcmd pid help) where pid is the process ID for the running Java process.
+Perfcounter.print
+Prints the performance counters exposed by the specified Java process.
+-f filename
+Reads and executes commands from a specified file, filename.
+-l
+Displays the list of Java Virtual Machine process identifiers that are not running in a separate docker process along with the main class and command-line arguments that were used to launch the process. If the JVM is in a docker process, you must use tools such as ps to look up the PID.
+
+Examples:
+
+```
+jcmd PID VM.version
+jcmd PID GC.heap_info
+jcmd PID Thread.dump_to_file
+jcmd PID VM.info
+```
