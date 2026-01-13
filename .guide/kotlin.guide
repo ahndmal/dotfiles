@@ -1,0 +1,15 @@
+
+## Create and run an application﻿
+
+kotlinc -help
+kotlinc file.kt -include-runtime -d file.jar
+
+## Compile a library
+
+kotlinc hello.kt -d hello.jar
+kotlin -classpath hello.jar HelloKt
+
+## Run scripts
+
+kotlinc -script list_folders.kts -- -d <path_to_folder_to_inspect>
+kotlinc -script-templates org.example.CustomScriptDefinition -script custom.script1.kts
