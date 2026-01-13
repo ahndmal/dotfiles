@@ -1,0 +1,47 @@
+# https://www.graalvm.org/latest/getting-started/
+
+## native-image
+
+native-image [options] class [imagename] [options]
+# From a Class
+native-image ClassName
+
+# From a JAR file
+native-image [options] -jar jarfile [imagename]
+
+# From a Module
+native-image [options] --module <module>[/<mainclass>] [options]
+
+## maven plugin
+
+```
+ <build>
+     <plugins>
+         <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-compiler-plugin</artifactId>
+             <version>3.12.1</version>
+             <configuration>
+                 <fork>true</fork>
+             </configuration>
+         </plugin>
+         <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-jar-plugin</artifactId>
+             <version>3.3.0</version>
+             <configuration>
+                 <archive>
+                     <manifest>
+                         <mainClass>com.example.App</mainClass>
+                         <addClasspath>true</addClasspath>
+                     </manifest>
+                 </archive>
+             </configuration>
+         </plugin>
+     </plugins>
+ </build>
+
+```
+
+# Compile the project and build a native executable at one step:
+mvn -Pnative package
