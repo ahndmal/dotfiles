@@ -1,0 +1,19 @@
+
+## GHCI
+ghci
+
+### Load module
+:m Data.List
+
+## compile
+ghc file.hs
+  
+## runghc
+runghc file.hs
+
+## Cabal
+cabal init
+cabal build
+cabal run
+  
+## Stack
