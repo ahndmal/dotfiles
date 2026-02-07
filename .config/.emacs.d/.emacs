@@ -301,9 +301,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;; THEME
 
-(use-package leuven-theme :ensure)
-;(use-package modus-themes :ensure)
-;(use-package ef-themes :ensure)
+(use-package gruber-darker-theme :ensure)
+;;(use-package modus-themes :ensure)
+;;(use-package ef-themes :ensure)
 (use-package kanagawa-themes :ensure)
 (use-package monokai-theme :ensure)
 
