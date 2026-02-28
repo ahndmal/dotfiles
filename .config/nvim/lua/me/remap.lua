@@ -17,6 +17,7 @@ vim.keymap.set("n", "<leader><leader>b", ":Black<cr>" )
 vim.keymap.set("n", "<leader><leader>u", ":UndotreeToggle<cr>" )
 
 -- telescope
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>lg", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>")    
 
