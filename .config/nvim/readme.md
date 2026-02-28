@@ -32,3 +32,9 @@ Install CoC utils with yarn
 ```
 :call coc#util#install()
 ```
+
+LS
+:CocInstall coc-rust-analyzer
+:CocInstall coc-java
+:CocInstall coc-tsserver
+
