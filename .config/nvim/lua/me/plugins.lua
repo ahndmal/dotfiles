@@ -7,9 +7,6 @@ return require('packer').startup(function(use)
     }
 
     use 'nvim-lua/plenary.nvim'
-
-    vim.cmd('colorscheme rose-pine')
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
 		
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     
@@ -27,6 +24,11 @@ return require('packer').startup(function(use)
 
     use 'sheerun/vim-polyglot'
 
-    -- 'morhetz/gruvbox'
-    use 'patstockwell/vim-monokai-tasty'
+	-- THEMES
+		
+	use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use 'morhetz/gruvbox'
+	use 'patstockwell/vim-monokai-tasty'
+
+	vim.cmd('colorscheme rose-pine')
 end)
