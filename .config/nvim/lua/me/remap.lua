@@ -5,6 +5,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<C-c>", "<Esc>")
 
 -- Coc
+vim.api.nvim_set_keymap('i', '<Tab>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<Tab>"', { silent = true, expr = true })
 vim.keymap.set("n", "<leader>gr", "<cmd><Plug>(coc-references)" )
 vim.keymap.set("n", "<leader>gd", "<Plug>(coc-definition)" )
 vim.keymap.set("n", "<leader>t", "<cmd>:NERDTree<cr>" )
