@@ -1,8 +1,9 @@
-theme = "catppuccin_frappe"
+theme = "gruvbox"
 
 [editor]
 line-number = "relative"
 mouse = false
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -37,9 +38,13 @@ p = ":insert-output echo -n 'println(\"\")'"
 [keys.normal.C-t]
 "p" = ":insert-output echo -n 'console.log(\"\");'"
 
-
 ### Python
 [keys.normal.C-p]
 #"p" = ["insert_mode", "TEST!"]
 "`" = { p = ["normal_mode", ":pipe echo '```python'", "collapse_selection", "insert_mode"] }
+
+### Rust
+[keys.normal.C-r]
+"t" = ":insert-output echo -n '#[cfg(test)] mod tests {  }'"
+"p" = ":insert-output echo -n 'println!(\"{:?}\");'"
 
