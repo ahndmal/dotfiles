@@ -169,9 +169,10 @@ https://github.com/ahndmal/dotfiles/blob/main/.config/.emacs.d/.emacs
 
 ## Fonts
 
-- Fira code (https://github.com/tonsky/FiraCode)
-- Powerline https://github.com/powerline/fonts
-- Nerd fonts (https://www.nerdfonts.com/)
+- Agave Regular
+- Fira code: https://github.com/tonsky/FiraCode
+- Powerline: https://github.com/powerline/fonts
+- Nerd fonts: https://www.nerdfonts.com/
 
 ## Tools
  
