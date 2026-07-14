@@ -2,8 +2,6 @@
 ## Vanilla
 Vanilla config in ```~/.config/nvim/init.vim``` with VimPlug.
 
-
-
 1. Install Plugin manager: Vim-Plug (https://github.com/junegunn/vim-plug):
 ```bash
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -12,6 +10,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 2. Add config into ```~/.config/nvim/init.vim```
 
 ## Lua config
+
+Mason packages
+
+https://github.com/mason-org/mason-registry/tree/main/packages
 
 ### Packer config
 
