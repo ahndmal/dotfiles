@@ -1,5 +1,6 @@
 -- Native LSP Setup
-require("me.keymap")
+require("me.remap")
+
 -- Global setup.
 local cmp = require 'cmp'
 cmp.setup({
@@ -47,7 +48,6 @@ require("mason").setup({
   }
 })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local on_attach = function(client, bufnr)
 
   local function buf_set_keymap(...)
