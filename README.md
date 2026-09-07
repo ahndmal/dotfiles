@@ -28,7 +28,9 @@ Config of my environment.
     - [ ] gradle
   - [ ] pyenv
   - [ ] nvm
-  - [ ] rustup
+  - [ ] rust
+  	 - [ ] rustup
+     - [ ] cargo 
   - [ ] cargo
   - [ ] ghcup
   - [ ] dotnet sdk / runtime
@@ -57,6 +59,9 @@ Config of my environment.
   - [ ] [emscrypten](https://emscripten.org/)
   - [ ] [wasmtime](https://wasmtime.dev/)
   - [ ] graal wasm
+  - [ ] wit
+  	- [ ] wasm-pack (rust)
+  	- [ ] cargo components
 - [ ] doc parsing
   - [ ] pandoc
   - [ ] QPDF
@@ -81,7 +86,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 Install plugins.
- - autosuggesions plugin
+ - autosuggestions plugin
  
 	`git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 	
