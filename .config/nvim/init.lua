@@ -62,8 +62,10 @@ end
 
 require("mason-lspconfig").setup({
   ensure_installed = {
+  "golps",
+  "groovy-language-server",
   "ts_ls", 
-    "pyright",
+  "pyright",
   "lua_ls",
   "jdtls", 
   "gopls",
