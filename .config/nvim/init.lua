@@ -12,6 +12,12 @@ Plug('fatih/vim-go', { ['tag'] = '*' })
 -- If the vim plugin is in a subdirectory, use 'rtp' option to specify its path
 Plug('nsf/gocode', { ['rtp'] = 'vim' })
 
+Plug('nvim-lua/plenary.nvim')
+
+Plug('nvim-telescope/telescope.nvim')
+
+Plug('nvim-treesitter/nvim-treesitter')
+
 -- On-demand loading: loaded when the specified command is executed
 Plug('preservim/nerdtree', { ['on'] = 'NERDTreeToggle' })
 
@@ -143,3 +149,42 @@ cmp.setup({
     { name = 'path' },
   })
 })
+
+-- telescope
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>lg", "<cmd>Telescope live_grep<CR>")
+vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>")
+
+-- ============================
+
+vim.opt.encoding='utf-8'
+vim.opt.updatetime=300
+
+vim.opt.guicursor = ""
+vim.opt.relativenumber = true
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+
+vim.opt.wrap = false
+
+vim.opt.swapfile = false
+-- vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
+
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+
+--vim.opt.colorcolumn = "80"
+
