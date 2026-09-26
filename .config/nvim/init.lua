@@ -37,6 +37,11 @@ Plug ('neovim/nvim-lspconfig')
 Plug ('williamboman/mason.nvim')
 Plug ('williamboman/mason-lspconfig.nvim')
 
+-- themes
+Plug('rose-pine/neovim')
+Plug('morhetz/gruvbox')
+------------------
+
 vim.call('plug#end')
 
 -- Color schemes should be loaded after plug#end().
@@ -185,6 +190,12 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
+
+--vim.opt.colorcolumn = "80"
+
+-- ======================= COLOR SCHEME ============
+vim.cmd('colorscheme rose-pine')
+
 
 --vim.opt.colorcolumn = "80"
 
