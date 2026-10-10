@@ -151,6 +151,18 @@ Config in ~/.config/helix:
 - config.toml (general configuration)
 - languages.toml (configuration for language servers for languages: https://github.com/ahndmal/.dotfiles/blob/main/helix/languages.toml)
 
+```
+sudo add-apt-repository ppa:maveonair/helix-editor
+sudo apt update
+sudo apt install helix
+
+wget https://github.com/ahndmal/.dotfiles/raw/main/helix/config.toml
+wget https://github.com/ahndmal/.dotfiles/raw/main/helix/languages.toml
+
+mv config.toml languages.toml ~/.config/helix
+
+```
+
 ## Emacs
 https://github.com/ahndmal/dotfiles/blob/main/.config/.emacs.d/.emacs
 - lsp-mode
@@ -198,6 +210,7 @@ https://github.com/ahndmal/dotfiles/blob/main/.config/.emacs.d/.emacs
 - [GHCUp](https://www.haskell.org/ghcup/)
 - [Clojure](https://clojure.org)
 - WASM tools
+
 
 ## Graphics
 - Krita
