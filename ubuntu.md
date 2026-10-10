@@ -6,8 +6,22 @@ sudo apt-get update -y
 sudo apt-get install zsh tmux zip unzip neovim git gcc make
 ```
 
+## zsh
+
+
+
 ### Neovim
 
+```bash
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+mkdir ~/.config/nvim
+
+wget https://raw.githubusercontent.com/ahndmal/dotfiles/refs/heads/main/.config/nvim/init.lua
+
+mv init.lua ~/.config/nvim
+```
 
 ### Helix
 ```
