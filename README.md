@@ -211,6 +211,11 @@ https://github.com/ahndmal/dotfiles/blob/main/.config/.emacs.d/.emacs
 - [Clojure](https://clojure.org)
 - WASM tools
 
+## Rust
+
+```
+rustup component add rust-analyzer
+```
 
 ## Graphics
 - Krita
